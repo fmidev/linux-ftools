@@ -4,7 +4,7 @@
 AC_PREREQ(2.61)
 AC_INIT([linux-ftools], [1.0.0], BUG-REPORT-ADDRESS)
 AC_CONFIG_SRCDIR([fincore.c])
-AM_INIT_AUTOMAKE([linux-ftools], [1.0.0])
+AM_INIT_AUTOMAKE
 #AC_CONFIG_HEADER([config.h])
 
 # Checks for programs.
