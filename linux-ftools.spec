@@ -21,6 +21,7 @@ They are designed primarily to work in high performance environments to determin
 %setup
  
 %build
+sed -e 's/^fallocate_SOURCES =.*$// ' -e 's/ fallocate//' --in-place Makefile.am
 aclocal
 automake
 autoconf
@@ -35,9 +36,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(0775,root,root,0775)
-%{_bindir}/*
+%{_bindir}/fincore
+%{_bindir}/fadvise
 
 %changelog
+* Mon May 28 2018 Heikki Pernu
+- Remove fallocate from packaging as util-linux has the same command and similar functionality already
+
 * Mon May 28 2018 Heikki Pernu
 - Fix and make source build more de-facto standard conforming
 
