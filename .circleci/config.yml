@@ -6,8 +6,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Update
-          command: .circleci/build.sh update
+          name: Prepare container
+          command: .circleci/prep.sh prep
       - run:
           name: Validate spec file
           command: yum install -y rpmlint && rpmlint -v *.spec
@@ -16,10 +16,7 @@ jobs:
           command: yum install -y yum-utils && yum-builddep -y *.spec
       - run:
           name: Build RPM
-          command: make clean && tar -czvf /tmp/tmp.tar.gz && rpmbuild -ta /tmp/tmp.tar.gz
-      - run:
-          name: Collect artifacts
-          command: mkdir -p /root/dist && find /root -name \*.rpm | xargs -I ARG mv -v ARG /root/dist/
+          command: .circleci/build.sh rpm
       - persist_to_workspace:
           root: /root/dist
           paths: ./*.rpm
@@ -28,6 +25,9 @@ jobs:
       - image: centos:latest
     steps:
       - checkout
+      - run:
+          name: Prepare container
+          command: .circleci/prep.sh prep
       - attach_workspace:
           at: /dist
       - run:
