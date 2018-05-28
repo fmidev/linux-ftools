@@ -18,8 +18,7 @@ These are tools designed for working with modern linux system calls including, m
 They are designed primarily to work in high performance environments to determine information about the running kernel, improve system performance, and debug performance problems.
 
 %prep
-rm -rf $RPM_BUILD_ROOT
-%setup -q
+%setup -c linux-ftools
  
 %build
 aclocal
@@ -36,7 +35,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(0775,root,root,0775)
-%{_sbindir}/*
+%{_bindir}/*
 
 %changelog
 * Thu May 24 2018 Heikki Pernu
