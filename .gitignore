@@ -1,3 +1,24 @@
+
+# Will be created by autotools
 Makefile
 config.log
 config.status
+.deps/
+autom4te.cache/
+aclocal.m4
+
+# Build artifacts
+*.o
+fadvise
+fallocate
+fincore
+linux-ftools-*.tar.gz
+
+# Eclipse files
+.project
+.cproject
+.settings/
+
+# Others
+*~
+
