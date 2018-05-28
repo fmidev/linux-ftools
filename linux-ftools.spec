@@ -1,11 +1,11 @@
 Summary: FS Cache and system resource utilization tools
-Name: ftools
-Version: 1
+Name: linux-ftools
+Version: 1.0.0
 Release: 1
 License: GPL
 Group: Applications/System
 URL: https://github.com/hpernu/linux-ftools
-Source: %{name}.tar.gz
+Source: %{name}-%{version}.tar.gz
 BuildRequires: autoconf-archive
 BuildRequires: automake
 BuildRequires: make
@@ -18,7 +18,7 @@ These are tools designed for working with modern linux system calls including, m
 They are designed primarily to work in high performance environments to determine information about the running kernel, improve system performance, and debug performance problems.
 
 %prep
-%setup -c linux-ftools
+%setup
  
 %build
 aclocal
@@ -38,5 +38,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/*
 
 %changelog
+* Mon May 28 2018 Heikki Pernu
+- Fix and make source build more de-facto standard conforming
+
 * Thu May 24 2018 Heikki Pernu
 - Created spec file
+
