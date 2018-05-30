@@ -83,8 +83,7 @@ int main(int argc, char *argv[]) {
 
     printf( "Going to fadvise %s\n", path );
 
-    int flags = O_RDWR;
-    int fd = open( path, flags );
+    int fd = open( path, O_RDONLY );
 
     if ( fd == -1 ) {
         perror( NULL );

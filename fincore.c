@@ -37,13 +37,7 @@ void fincore(char* path, int pages, int summarize, int only_cached, struct finco
     size_t page_index;
     char *errstr;
 
-    int flags = O_RDWR;
-    
-    //TODO:
-    //
-    // pretty print integers with commas... 
-
-    fd = open(path,flags);
+    fd = open(path,O_RDONLY);
 
     if ( fd == -1 ) {
         f_err(path,"Cannot open file");
