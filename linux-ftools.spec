@@ -1,6 +1,6 @@
 Summary: FS Cache and system resource utilization tools
 Name: linux-ftools
-Version: 1.0.0
+Version: 1.0.1
 Release: 1
 License: GPL
 Group: Applications/System
@@ -40,6 +40,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/fadvise
 
 %changelog
+* Wed May 30 2018 Heikki Pernu
+- Open files to query in read-only mode, bump version
+
 * Mon May 28 2018 Heikki Pernu
 - Remove fallocate from packaging as util-linux has the same command and similar functionality already
 
