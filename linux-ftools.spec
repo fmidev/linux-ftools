@@ -40,7 +40,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/fadvise
 
 %changelog
-* Mon May 30 2018 Heikki Pernu
+* Wed May 30 2018 Heikki Pernu
 - Open files to query in read-only mode, bump version
 
 * Mon May 28 2018 Heikki Pernu
